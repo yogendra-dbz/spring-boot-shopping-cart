@@ -40,7 +40,7 @@ node {
 
     stage('package') {
 		 sh "mvn package -DskipTests"
-		 archiveArtifacts artifacts: '**/target/*.war', fingerprint: true
+		 archiveArtifacts artifacts: '**/target/*.jar', fingerprint: true
 	}
     
   }
