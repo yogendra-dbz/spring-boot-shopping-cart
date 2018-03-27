@@ -10,7 +10,6 @@
 <div th:fragment="footer">
     <div class="container">
         <footer>
-            &copy; 2017 Dušan Reljić
             <span sec:authorize="isAuthenticated()">
                 | Logged user: <span sec:authentication="name"></span> |
                 Roles: <span sec:authentication="principal.authorities"></span> |

@@ -1,3 +1,59 @@
 footer {
-    margin-top: 60px;
+	margin-top: 60px;
+}
+
+body {
+	font-family: Helvetica;
+	color: #4d4d4d
+}
+
+.categories-carousel .item .img-circle {
+	width: 100%;
+	height: 200px;
+	margin: 0 0 20px 0
+}
+
+.thumbnail .product-details+p {
+	clear: both
+}
+
+.thumbnail .glyphicon-shopping-cart {
+	font-size: 28px;
+	color: #900
+}
+
+.no-padding {
+	padding: 0
+}
+
+.nopadding-left {
+	padding-left: 0
+}
+
+.nopadding-right {
+	padding-right: 0
+}
+
+.homepage .thumbnail {
+	border: none
+}
+
+.customized-picks {
+	border-bottom: 1px solid #ccc;
+	margin: 0
+}
+
+.navbar .navbar-nav>li>a {
+	color: #fff;
+}
+
+.customized-picks>div  {
+	 height:  350px;
+	   max-height:  350px;
+}
+
+.header-green {
+	background-color:green;
+	border-color:#080808;
+}
 }
