@@ -39,7 +39,7 @@ node {
     }
 
     stage('package') {
-		 sh "mvn package -Pprod -DskipTests"
+		 sh "mvn package -DskipTests"
 		 archiveArtifacts artifacts: '**/target/*.war', fingerprint: true
 	}
     
