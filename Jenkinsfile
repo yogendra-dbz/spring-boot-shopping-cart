@@ -38,4 +38,9 @@ node {
         }
     }
 
+    stage('package') {
+		 sh "mvn package -Pprod -DskipTests"
+		 archiveArtifacts artifacts: '**/target/*.war', fingerprint: true
+	}
+    
   }
