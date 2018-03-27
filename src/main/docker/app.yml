@@ -1,0 +1,14 @@
+version: '2'
+services:
+    shoppingcart-app:
+        image: lab4.southeastasia.cloudapp.azure.com/shoppingcart
+        environment:
+            - SPRING_PROFILES_ACTIVE=prod,swagger
+            - SPRING_DATASOURCE_URL=jdbc:mysql://localhost:3306/shoppingcart?useUnicode=true&characterEncoding=utf8&useSSL=false
+            - JHIPSTER_SLEEP=50 # gives time for the database to boot before the application
+        ports:
+            - 80:8080
+    shoppingcart-mysql:
+        extends:
+            file: mysql.yml
+            service: shoppingcart-mysql
