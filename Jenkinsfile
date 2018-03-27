@@ -28,13 +28,7 @@ node {
         sh "mvn com.github.eirslett:frontend-maven-plugin:install-node-and-yarn -DnodeVersion=v6.11.1 -DyarnVersion=v0.27.5"
     }
 
-    stage('yarn install') {
-        sh "mvn com.github.eirslett:frontend-maven-plugin:yarn"
-    }
-    stage('bower install') {
-        sh "mvn com.github.eirslett:frontend-maven-plugin:bower"
-    } 
-    stage('backend tests') {
+   stage('backend tests') {
         try {
             sh "mvn test"
         } catch(err) {
