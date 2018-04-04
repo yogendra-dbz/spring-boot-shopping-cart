@@ -40,9 +40,10 @@ node {
     }
     
     stage('Static Code analysis'){
-	withSonarQubeEnv {
+       withSonarQubeEnv {
         sh "mvn sonar:sonar"
-       }   
+       }
+       waitForQualityGate()    
      }	
 	
 
