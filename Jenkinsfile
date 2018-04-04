@@ -1,6 +1,11 @@
 #!/usr/bin/env groovy
 
 node {
+	
+    parameters {
+        stringParam(defaultValue: 1.0.0, description: '', name: 'ReleaseVersion')
+    }
+	
     stage('configure Java') {
       tool name: 'jdk8', type: 'jdk'
     }
@@ -39,7 +44,7 @@ node {
     }
 
     stage('package') {
-		 sh "mvn package -DskipTests docker:build -DpushImage  -DdockerImageTags=ReleaseVersion"
+		 sh "mvn package -DskipTests docker:build -DpushImage  -DdockerImageTags=${params.ReleaseVersion}"
 		 archiveArtifacts artifacts: '**/target/*.jar', fingerprint: true
 	}
     
