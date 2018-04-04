@@ -2,11 +2,7 @@
 
 node {
 
-   stage('Release') {	
-    input message: 'Release', ok: 'Ok', parameters: [string(defaultValue: '1.0.0', description: '', name: 'ReleaseVersion')]
-   }
-	
-    stage('configure Java') {
+   stage('configure Java') {
       tool name: 'jdk8', type: 'jdk'
     }
     stage('configure Maven') {
@@ -44,7 +40,7 @@ node {
     }
 
     stage('package') {
-		 sh "mvn package -DskipTests docker:build -DpushImage  -DdockerImageTags=${env.ReleaseVersion}"
+		 sh "mvn package -DskipTests docker:build -DpushImage  -DdockerImageTags=${params.ReleaseVersion}"
 		 archiveArtifacts artifacts: '**/target/*.jar', fingerprint: true
 	}
     
