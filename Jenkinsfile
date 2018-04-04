@@ -41,7 +41,7 @@ node {
     
     stage('Static Code analysis'){
 	withSonarQubeEnv {
-        sh "./gradlew clean sonarqube"
+        sh "mvn sonar:sonar"
        }   
      }	
 	
