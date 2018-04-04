@@ -44,7 +44,7 @@ node {
     }
 
     stage('package') {
-		 sh "mvn package -DskipTests docker:build -DpushImage  -DdockerImageTags=${params.ReleaseVersion}"
+		 sh "mvn package -DskipTests docker:build -DpushImage  -DdockerImageTags=${env.ReleaseVersion}"
 		 archiveArtifacts artifacts: '**/target/*.jar', fingerprint: true
 	}
     
