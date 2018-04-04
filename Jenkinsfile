@@ -38,6 +38,13 @@ node {
             junit '**/target/surefire-reports/TEST-*.xml'
         }
     }
+    
+    stage('Static Code analysis'){
+	withSonarQubeEnv {
+        sh "./gradlew clean sonarqube"
+       }   
+     }	
+	
 
     stage('package') {
 		 sh "mvn package -DskipTests docker:build -DpushImage  -DdockerImageTags=${params.ReleaseVersion}"
