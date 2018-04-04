@@ -45,11 +45,14 @@ node {
        }
        waitForQualityGate()    
      }	
-	
+    	
 
     stage('package') {
 		 sh "mvn package -DskipTests docker:build -DpushImage  -DdockerImageTags=${params.ReleaseVersion}"
 		 archiveArtifacts artifacts: '**/target/*.jar', fingerprint: true
 	}
     
+     stage('publish'){
+	nexusArtifactUploader artifacts: [[artifactId: 'app', classifier: '', file: '**/target/*.jar', type: 'jar']], credentialsId: 'nexus3', groupId: 'shoppingcart', nexusUrl: 'http://lab4.southeastasia.cloudapp.azure.com:8081', nexusVersion: 'nexus3', protocol: 'http', repository: 'Release', version: '1.0.0'
+	} 	
   }
