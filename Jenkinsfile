@@ -3,7 +3,7 @@
 node {
 	
     parameters {
-        stringParam(defaultValue: 1.0.0, description: '', name: 'ReleaseVersion')
+        stringParam(defaultValue: '1.0.0', description: '', name: 'ReleaseVersion')
     }
 	
     stage('configure Java') {
