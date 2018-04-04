@@ -43,7 +43,7 @@ node {
        withSonarQubeEnv {
         sh "mvn sonar:sonar"
        }
-       waitForQualityGate()    
+        
      }	
     	
 
