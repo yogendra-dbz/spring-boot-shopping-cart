@@ -5,7 +5,7 @@
 
     <groupId>com.reljicd</groupId>
     <artifactId>shopping-cart</artifactId>
-    <version>0.0.1-SNAPSHOT</version>
+    <version>0.0.1</version>
     <packaging>jar</packaging>
 
     <name>shopping-cart</name>
@@ -123,7 +123,7 @@
                     <serverId>dockerRegistry</serverId>
                     <registryUrl>https://lab4.southeastasia.cloudapp.azure.com/v2/</registryUrl>     
                     <repository>lab4.southeastasia.cloudapp.azure.com/shoppingcart</repository>
-                    <tag>shoppingcart:latest</tag>
+                    <tag>shoppingcart:${project.version}</tag>
                     <imageName>lab4.southeastasia.cloudapp.azure.com/shoppingcart</imageName>
                     <dockerDirectory>src/main/docker</dockerDirectory>
                     <resources>
