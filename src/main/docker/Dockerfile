@@ -7,7 +7,7 @@ ENV SPRING_OUTPUT_ANSI_ENABLED=ALWAYS \
 # add directly the war
 ADD *.jar /app.jar
 
-EXPOSE 8080
+EXPOSE 8070
 CMD echo "The application will start in ${APP_SLEEP}s..." && \
     sleep ${APP_SLEEP} && \
     java ${JAVA_OPTS} -Djava.security.egd=file:/dev/./urandom -jar /app.jar
